@@ -1,26 +1,122 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Tema Claro con los colores de React */
+  --radius: 0.625rem;
+  --background: #F0F8FF;
+  --foreground: #333333;
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --popover: #ffffff;
+  --popover-foreground: #333333;
+  --primary: #61DBFB;
+  --primary-foreground: #333333;
+  --secondary: #e0e0e0;
+  --secondary-foreground: #333333;
+  --muted: #f0f0f0;
+  --muted-foreground: #666666;
+  --accent: #f0f0f0;
+  --accent-foreground: #333333;
+  --destructive: #ef4444;
+  --border: #d4d4d4;
+  --input: #d4d4d4;
+  --ring: #61DBFB;
+  --chart-1: #61DBFB;
+  --chart-2: #333333;
+  --chart-3: #999999;
+  --chart-4: #e0e0e0;
+  --chart-5: #666666;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #333333;
+  --sidebar-primary: #61DBFB;
+  --sidebar-primary-foreground: #333333;
+  --sidebar-accent: #f0f0f0;
+  --sidebar-accent-foreground: #333333;
+  --sidebar-border: #d4d4d4;
+  --sidebar-ring: #61DBFB;
+}
+
+.dark {
+  /* Tema Oscuro con los colores de React */
+  --background: #282C34;
+  --foreground: #ffffff;
+  --card: #3a3f4b;
+  --card-foreground: #ffffff;
+  --popover: #3a3f4b;
+  --popover-foreground: #ffffff;
+  --primary: #61DBFB;
+  --primary-foreground: #ffffff;
+  --secondary: #4a4f5c;
+  --secondary-foreground: #ffffff;
+  --muted: #3a3f4b;
+  --muted-foreground: #a0a0a0;
+  --accent: #4a4f5c;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #4a4f5c;
+  --input: #4a4f5c;
+  --ring: #61DBFB;
+  --chart-1: #61DBFB;
+  --chart-2: #ffffff;
+  --chart-3: #a0a0a0;
+  --chart-4: #4a4f5c;
+  --chart-5: #e0e0e0;
+  --sidebar: #3a3f4b;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #61DBFB;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #4a4f5c;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #4a4f5c;
+  --sidebar-ring: #61DBFB;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
