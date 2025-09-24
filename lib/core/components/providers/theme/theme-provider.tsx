@@ -8,8 +8,10 @@ export function ThemeProvider({
   children,
   ...props
 }: Readonly<React.ComponentProps<typeof NextThemesProvider>>) {
-  return <NextThemesProvider {...props}>
-    <Navbar/>{
-    
-    children}</NextThemesProvider>;
+  return (
+    <NextThemesProvider {...props}>
+      <Navbar />
+      {children}
+    </NextThemesProvider>
+  );
 }

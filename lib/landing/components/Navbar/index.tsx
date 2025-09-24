@@ -36,18 +36,17 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-md dark:bg-gray-900/70 shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/20 border-b border-border">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo de la comunidad */}
-        <Link
-          href="/"
-          className="text-2xl font-bold text-gray-900 dark:text-white"
-        >
+        <Link href="/" className="text-2xl font-bold text-gray-900 ">
           <Image
-            src="/207464015.png"
+            src="/logo.png"
             width={50}
             height={10}
-            className="rounded-4xl" alt={"React Cuba"}          />
+            className="rounded-2xl"
+            alt={"React Cuba"}
+          />
         </Link>
 
         {/* Enlaces de navegación y toggles */}
