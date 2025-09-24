@@ -58,9 +58,9 @@ export const CommunityProjectsSection = () => {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <div
-            key={index}
+            key={project.name}
             className="bg-background border rounded-lg border-border overflow-hidden"
           >
             <Image
