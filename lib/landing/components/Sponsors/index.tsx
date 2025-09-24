@@ -20,9 +20,9 @@ export const SponsorsScetion = () => {
       </p>
 
       <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
-        {sponsors.map((sponsor, index) => (
-          <div key={index} className="flex justify-center items-center p-4">
-            <img 
+        {sponsors.map((sponsor) => (
+          <div key={sponsor.name} className="flex justify-center items-center p-4">
+            <img
               src={sponsor.logoUrl}
               alt={sponsor.name}
               className="w-full h-auto max-h-16 object-contain filter grayscale hover:grayscale-0 transition-filter duration-300"

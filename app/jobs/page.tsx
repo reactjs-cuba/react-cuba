@@ -37,8 +37,8 @@ export default function JobsPage() {
       </header>
 
       <div className="mt-12 space-y-6">
-        {jobOffers.map((job, index) => (
-          <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        {jobOffers.map((job) => (
+          <div key={job.title} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
               {job.title}
             </h2>

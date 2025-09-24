@@ -51,9 +51,9 @@ export const CubanCompaniesSection = () => {
       </p>
 
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {cubanCompanies.map((company, index) => (
+        {cubanCompanies.map((company) => (
           <div
-            key={index}
+            key={company.name}
             className="border bg-background border-border rounded-lg p-10 pb-7 bg-gradient-to-br"
           >
             <div className="flex flex-col items-center">

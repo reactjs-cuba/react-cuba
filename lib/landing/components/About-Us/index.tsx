@@ -115,9 +115,9 @@ export const AboutUsScetion = () => {
           Nuestros desarrolladores
         </h2>
         <div className="grid grid-cols-10 gap-3 place-items-center mt-10">
-          {developers.map((developer, index) => (
+          {developers.map((developer) => (
             <img
-              key={index}
+              key={developer.name}
               className="w-full aspect-square rounded-full border-2 border-white dark:border-gray-800"
               src={developer.avatarUrl}
               alt={developer.name}
