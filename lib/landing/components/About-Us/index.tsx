@@ -90,32 +90,42 @@ const developers = [
 
 export const AboutUsScetion = () => {
   return (
-    <div className="mx-auto p-4 gap-3 flex flex-col items-center justify-center h-96 bg-[var(--card)]">
-       <h2 className="text-4xl font-bold text-gray-900 dark:text-white">¿QUIÉNES SOMOS?</h2>
-      <p>
-        Conectamos con personas apasionadas por React y sus tecnologías
-        relacionadas, compartimos conocimientos, aprendemos juntos y crecemos
-        como comunidad.
-      </p>
-      <p>
-        Somos una comunidad creada para explorar y compartir los últimos avances
-        en React JS y sus derivados, incluyendo React Native, Redux,
-        React-Bootstrap, Material UI y mucho más!
-      </p>
-      <span>Aprendemos, conectamos, crecemos e iteramos</span>
+    <div className="gap-3 py-30 px-20 grid grid-cols-1 md:grid-cols-2 dark:bg-background-darkest ">
+      <div className="flex flex-col gap-5">
+        <h2 className="text-6xl font-bold text-header-content">
+          ¿Quiénes Somos?
+        </h2>
+        <div className="text-2xl flex flex-col gap-10 pt-10 text-content">
+          <p>
+            Conectamos con personas apasionadas por React y sus tecnologías
+            relacionadas, compartimos conocimientos, aprendemos juntos y
+            crecemos como comunidad.
+          </p>
+          <p>
+            Somos una comunidad creada para explorar y compartir los últimos
+            avances en React JS y sus derivados, incluyendo React Native, Redux,
+            React-Bootstrap, Material UI y mucho más!
+          </p>
+          <span>Aprendemos, conectamos, crecemos e iteramos</span>
+        </div>
+      </div>
 
-      <h2 className="mt-6 text-xl font-semibold">Nuestros Desarrolladores</h2>
-      <div className="grid grid-cols-10 ">
-        {developers.map((developer, index) => (
-          <img
-            key={index}
-            className="w-12 h-12 rounded-full border-2 border-white dark:border-gray-800"
-            src={developer.avatarUrl}
-            alt={developer.name}
-            width={48}
-            height={48}
-          />
-        ))}
+      <div className="px-5">
+        <h2 className="text-6xl font-bold text-header-content">
+          Nuestros desarrolladores
+        </h2>
+        <div className="grid grid-cols-10 gap-3 place-items-center mt-10">
+          {developers.map((developer, index) => (
+            <img
+              key={index}
+              className="w-full aspect-square rounded-full border-2 border-white dark:border-gray-800"
+              src={developer.avatarUrl}
+              alt={developer.name}
+              width={48}
+              height={48}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  DM_Sans,
+  Montserrat,
+  Space_Grotesk,
+  Sansation,
+  Tomorrow,
+} from "next/font/google";
 import "./globals.css";
 import ReactQueryProviders from "@/lib/core/components/providers/tanstack/react-query";
 import { ThemeProvider } from "@/lib/core/components/providers/theme/theme-provider";
-import { Navbar } from "@/lib/landing/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  fallback: ["sans-serif"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,18 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={spaceGrotesk.className}>
+      <body className="font-space-grotesk">
         <ReactQueryProviders>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >     
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             {children}
-        </ThemeProvider>
-            </ReactQueryProviders>
+          </ThemeProvider>
+        </ReactQueryProviders>
       </body>
     </html>
   );
