@@ -8,13 +8,18 @@ import MongodbOriginal from "react-devicons/mongodb/original";
 import TypescriptOriginal from "react-devicons/typescript/original";
 import StorybookOriginal from "react-devicons/storybook/original";
 import TailwindcssPlain from "react-devicons/tailwindcss/original";
+import { randomInt } from "crypto";
 
 const projects = [
   {
     name: "ReactCuba Dashboard",
     description:
       "Un panel de control de código abierto para gestionar la comunidad y los eventos.",
-    techStack: [<ReactOriginal />, <NextjsOriginal />, <TailwindcssPlain />],
+    techStack: [
+      <ReactOriginal key="react-original" />,
+      <NextjsOriginal key="nextjs-original" />,
+      <TailwindcssPlain key="tailwindcss-original" />,
+    ],
     githubUrl: "#",
     imageUrl:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -24,9 +29,9 @@ const projects = [
     description:
       "Una plataforma para que los desarrolladores cubanos encuentren y publiquen ofertas de trabajo.",
     techStack: [
-      <ReactOriginal />,
-      <ExpressOriginal color="#fff" fill="#fff" />,
-      <MongodbOriginal />,
+      <ReactOriginal key="react-original" />,
+      <ExpressOriginal key="express-original" color="#fff" fill="#fff" />,
+      <MongodbOriginal key="mongodb-original" />,
     ],
     githubUrl: "#",
     imageUrl:
@@ -37,9 +42,9 @@ const projects = [
     description:
       "Una colección de componentes de React reutilizables para el ecosistema de la comunidad.",
     techStack: [
-      <ReactOriginal />,
-      <StorybookOriginal />,
-      <TypescriptOriginal />,
+      <ReactOriginal key="react-original" />,
+      <StorybookOriginal key="storybook-original" />,
+      <TypescriptOriginal key="typescript-original" />,
     ],
     githubUrl: "#",
     imageUrl:
@@ -50,9 +55,7 @@ const projects = [
 export const CommunityProjectsSection = () => {
   return (
     <div className="mx-auto p-8 text-center py-30 px-20 bg-gray-60">
-      <h2 className="text-6xl font-bold">
-        Proyectos de la Comunidad
-      </h2>
+      <h2 className="text-6xl font-bold">Proyectos de la Comunidad</h2>
       <p className="mt-4 text-2xl text-gray-600 dark:text-gray-400">
         Explora los proyectos que estamos construyendo juntos.
       </p>
@@ -80,7 +83,10 @@ export const CommunityProjectsSection = () => {
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech, index) =>
-                  React.cloneElement(tech, { key: index, size: 40 })
+                  React.cloneElement(tech, {
+                    key: index,
+                    size: 40,
+                  })
                 )}
               </div>
               <Link
